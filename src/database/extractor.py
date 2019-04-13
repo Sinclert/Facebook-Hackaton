@@ -17,6 +17,21 @@ SQL_CONNECTION = mysql.connector.connect(
 )
 
 
+def measure_success():
+
+	query = open('database/queries/measure_success.sql')
+	query_content = query.read()
+	query.close()
+
+	cursor = SQL_CONNECTION.cursor()
+	cursor.execute(query_content)
+	results = cursor.fetchall()
+	cursor.close()
+
+	return results
+
+
+
 
 def basic_select(table_name, table_columns, table_conditions):
 

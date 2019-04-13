@@ -2,6 +2,7 @@
 
 from database.extractor import basic_select
 from database.extractor import agg_tags_stats
+from database.extractor import measure_success
 
 from encoders import MyJSONEncoder
 
@@ -35,7 +36,13 @@ def get_aggr_tags_stats():
 
 
 
+@app.route('/get_campaign_success', methods=['GET', 'POST'])
+def get_camp_success():
+
+	results = measure_success()
+	return jsonify(results)
+
+
+
 if __name__ == '__main__':
-	app.run(
-		host='0.0.0.0'
-	)
+	app.run(host='0.0.0.0', debug=False)
