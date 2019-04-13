@@ -36,3 +36,18 @@ def basic_select(table_name, table_columns, table_conditions):
 	cursor.close()
 
 	return results
+
+
+
+def agg_tags_stats():
+
+	query = open('database/queries/tags_agg.sql')
+	query_content = query.read()
+	query.close()
+
+	cursor = SQL_CONNECTION.cursor()
+	cursor.execute(query_content)
+	results = cursor.fetchall()
+	cursor.close()
+
+	return results
