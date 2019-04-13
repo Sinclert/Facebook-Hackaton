@@ -4,7 +4,7 @@
 
 
 ### get_data
-- Host: localhost:3306
+- Host: 0.0.0.0:3306
 - Request: GET
 - Endpoint: /get_data
 - Arguments:
@@ -14,14 +14,14 @@
  
  
  ### get_tags_stats
-- Host: localhost:3306
+- Host: 0.0.0.0:3306
 - Request: GET
 - Endpoint: /get_tags_stats
 - Description: aggregated statistics by campaign tag
 	- avg(stats.STA_spent)
+	- avg(stats.STA_IMPRESSIONS)
 	- avg(stats.STA_CLICKS)
 	- avg(stats.STA_CTR)
 	- avg(stats.STA_AGV_CPM)
 	- avg(stats.STA_AGV_CPC)
 	- avg(stats.STA_CONVERSION)
-	- avg(stats.STA_SOCIAL_IMPRESSIONS)

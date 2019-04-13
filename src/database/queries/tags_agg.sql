@@ -1,12 +1,12 @@
 select
 	tags.tag,
 	round(avg(stats.STA_spent), 2),
+    round(avg(stats.STA_IMPRESSIONS), 2),
 	round(avg(stats.STA_CLICKS), 2),
 	round(avg(stats.STA_CTR), 2),
 	round(avg(stats.STA_AGV_CPM), 2),
 	round(avg(stats.STA_AGV_CPC), 2),
-	round(avg(stats.STA_CONVERSION), 2),
-	round(avg(stats.STA_SOCIAL_IMPRESSIONS), 2)
+	round(avg(stats.STA_CONVERSION), 2)
 from
 	facebookii_ht.tags tags
 	left join facebookii_ht.campaigns_tags camp_tags on camp_tags.TAGS_ID_TAG=tags.ID_TAG
