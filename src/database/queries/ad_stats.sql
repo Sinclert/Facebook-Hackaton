@@ -1,30 +1,11 @@
 select
-	avg(stats.STA_IMPRESSIONS),
-	avg(stats.STA_CLICKS),
-	avg(stats.STA_SPENT),
-	avg(stats.STA_CTR),
-	avg(stats.STA_AGV_CPC),
-	avg(stats.STA_AGV_CPM),
-	avg(stats.STA_CONVERSION),
-	avg(stats.STA_ACTIONS),
-	avg(stats.STA_ACTIONS_RATE),
-	avg(stats.STA_SOCIAL_IMPRESSIONS),
-	avg(stats.STA_SOCIAL_PERCENT),
-	avg(stats.STA_SOCIAL_CTR),
-	avg(stats.STA_UNIQUE_IMPRESSIONS),
-	avg(stats.STA_UNIQUE_CLICKS),
-	avg(stats.STA_UNIQUE_CTR),
-	avg(stats.STA_SOCIAL_CLICKS),
-	avg(stats.STA_SOCIAL_SPENT),
-	avg(stats.STA_UNIQUE_SOCIAL_IMPRESSIONS),
-	avg(stats.STA_UNIQUE_SOCIAL_CLICKS),
-	avg(stats.STA_CONNECTIONS),
-	avg(stats.STA_NEWSFEED_IMPRESSIONS),
-	avg(stats.STA_NEWSFEED_CLICKS),
-	avg(stats.STA_NEWSFEED_AVERAGE_POSITION)
+	stats.STA_DATE,
+	stats.STA_IMPRESSIONS,
+	stats.STA_CLICKS,
+	round(stats.STA_SPENT, 2),
+	round(stats.STA_CTR, 2)
 from
 	facebookii_ht.statistics stats
 where
-	stats.ADS_ID_AD={ad_id}
-group by
-	stats.ADS_ID_AD
+	stats.STA_IMPRESSIONS > 0
+	and ADS_ID_AD={ad_id}
