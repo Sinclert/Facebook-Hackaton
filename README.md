@@ -3,8 +3,17 @@
 # API description: 
 
 
+
+### get_ad_stats
+- Host: 0.0.0.0:5000
+- Request: GET
+- Endpoint: /get_ad_stats
+- Arguments:
+ - ad_id:
+
+
 ### get_data
-- Host: 0.0.0.0:3306
+- Host: 0.0.0.0:5000
 - Request: GET
 - Endpoint: /get_data
 - Arguments:
@@ -13,8 +22,8 @@
  - table_conditions: where filters. If no one wanted, set it to `True`.
  
  
- ### get_tags_stats
-- Host: 0.0.0.0:3306
+### get_tags_stats
+- Host: 0.0.0.0:5000
 - Request: GET
 - Endpoint: /get_tags_stats
 - Description: aggregated statistics by campaign tag

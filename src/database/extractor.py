@@ -32,6 +32,23 @@ def measure_success():
 
 
 
+def ad_stats(ad_id):
+
+	query = open('database/queries/ad_stats.sql')
+
+	query_content = query.read()
+	query_content = query_content.format(
+		ad_id=ad_id
+	)
+	query.close()
+
+	cursor = SQL_CONNECTION.cursor()
+	cursor.execute(query_content)
+	results = cursor.fetchall()
+	cursor.close()
+
+	return results
+
 
 def basic_select(table_name, table_columns, table_conditions):
 

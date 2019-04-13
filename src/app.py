@@ -2,6 +2,7 @@
 
 from database.extractor import basic_select
 from database.extractor import agg_tags_stats
+from database.extractor import ad_stats
 from database.extractor import measure_success
 
 from encoders import MyJSONEncoder
@@ -23,6 +24,16 @@ def get_data():
 	table_conditions = request.args.get('table_conditions')
 
 	results = basic_select(table_name, table_columns, table_conditions)
+
+	return jsonify(results)
+
+
+
+@app.route('/get_ad_stats', methods=['GET', 'POST'])
+def get_ad_stats():
+
+	ad_id = request.args.get('ad_id')
+	results = ad_stats(ad_id)
 
 	return jsonify(results)
 
