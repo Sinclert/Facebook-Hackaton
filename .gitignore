@@ -1,0 +1,9 @@
+# Credentials files
+**/credentials.py
+
+# Compiled Python files
+**/*.pyc
+
+# macOS and IDE aux files
+**/.DS_Store
+.idea
