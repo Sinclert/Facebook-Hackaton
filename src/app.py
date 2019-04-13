@@ -10,9 +10,12 @@ from encoders import MyJSONEncoder
 from flask import Flask
 from flask import jsonify
 from flask import request
+from flask_cors import CORS, cross_origin
 
 app = Flask('Facebook-backend')
+cors = CORS(app)
 app.json_encoder = MyJSONEncoder
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 
@@ -30,6 +33,7 @@ def get_data():
 
 
 @app.route('/get_ad_stats', methods=['GET', 'POST'])
+@cross_origin()
 def get_ad_stats():
 
 	ad_id = request.args.get('ad_id')
