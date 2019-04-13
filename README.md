@@ -10,7 +10,7 @@
 - Arguments:
  - table_name: table name
  - table_columns: table columns, separated by commas.
- - table_confitions: where filters. If no one wanted, set it to `True`.
+ - table_conditions: where filters. If no one wanted, set it to `True`.
  
  
  ### get_tags_stats
