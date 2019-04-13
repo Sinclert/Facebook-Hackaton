@@ -1,4 +1,4 @@
 # Package requirements
 
 Flask ~= 1.0
-mysql-connector ~= 2.2
+mysql-connector-python ~= 8.0

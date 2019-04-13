@@ -3,4 +3,4 @@ select
 from
     {table_name}
 where
-    {conditions};
+    {table_conditions};

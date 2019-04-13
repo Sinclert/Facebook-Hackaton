@@ -14,8 +14,11 @@ app = Flask('Facebook-backend')
 def get_data():
 
 	table_name = request.args.get('table_name')
-	table_columns = request.args.get('table_column')
+	table_columns = request.args.get('table_columns')
 	table_conditions = request.args.get('table_conditions')
+	print(table_name)
+	print(table_columns)
+	print(table_conditions)
 
 	results = basic_select(table_name, table_columns, table_conditions)
 
